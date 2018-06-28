@@ -1,4 +1,4 @@
-// const database = require("../connection.js");
+
 var knex = require('../connection')
 const authUtils = require('../utils/auth')
 
