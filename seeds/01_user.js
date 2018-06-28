@@ -9,7 +9,8 @@ exports.seed = function (knex, Promise) {
         {
           id: 1,
           email: 'a',
-          password: authUtils.hashPassword('a')
+          password: authUtils.hashPassword('a'),
+          ballotId: 1
         },
       ]);
     });
