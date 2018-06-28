@@ -9,8 +9,11 @@ exports.seed = function (knex, Promise) {
         {
           id: 1,
           email: 'a',
-          password: authUtils.hashPassword('a')
+          password: authUtils.hashPassword('a'),
+          ballotId: 1
         },
       ]);
+    }).then(() => {
+      return knex.raw("ALTER SEQUENCE user_id_seq RESTART WITH 2;");
     });
 };

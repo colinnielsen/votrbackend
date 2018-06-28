@@ -8,7 +8,7 @@ exports.seed = function (knex, Promise) {
         {
           id: 1,
           gov: 1,
-          da: 1,
+          ag: 1,
           sos: 1,
           d1: 1,
           d2: 1,
@@ -19,5 +19,7 @@ exports.seed = function (knex, Promise) {
           d7: 1
         },
       ]);
+    }).then(() => {
+      return knex.raw("ALTER SEQUENCE myballot_id_seq RESTART WITH 2;");
     });
 };

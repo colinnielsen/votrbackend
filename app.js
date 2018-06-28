@@ -4,6 +4,8 @@ const cors = require("cors");
 const app = express();
 var auth = require('./routes/auth');
 var user = require('./routes/user');
+var candidates = require('./routes/candidates');
+var ballot = require('./routes/myballot');
 
 
 app.use(cors())
@@ -21,5 +23,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use('/auth', auth);
 app.use('/user', user);
+app.use('/candidates', candidates);
+app.use('/myballot', ballot);
 
 module.exports = app;
