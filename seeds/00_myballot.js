@@ -6,7 +6,6 @@ exports.seed = function (knex, Promise) {
       // Inserts seed entries
       return knex('myballot').insert([
         {
-          id: 1,
           gov: 1,
           ag: 1,
           sos: 1,
