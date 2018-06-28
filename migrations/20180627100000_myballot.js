@@ -1,4 +1,4 @@
-exports.up = function (knex) {
+exports.up = function (knex, Promise) {
     return knex.schema.createTable('myballot', table => {
         table.increments('id')
         table.integer('gov')
@@ -14,6 +14,6 @@ exports.up = function (knex) {
     })
 };
 
-exports.down = function (knex) {
+exports.down = function (knex, Promise) {
     return knex.schema.dropTableIfExists('myballot')
 };
