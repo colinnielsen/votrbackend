@@ -15,18 +15,34 @@ module.exports = {
 
   create(body) {
     return (
-      knex('user').insert(
+      knex('myballot').insert({
+        gov: null,
+        da: null,
+        sos: null,
+        d1: null,
+        d2: null,
+        d3: null,
+        d4: null,
+        d5: null,
+        d6: null,
+        d7: null
+      })
+      .returning('id')
+      .then(id =>
         {
-          email: body.email,
-          password: authUtils.hashPassword(body.password)
+          knex('user').insert(
+            {
+              email: body.email,
+              password: authUtils.hashPassword(body.password),
+              ballotId: id
+            }).returning('*')
         })
-        .returning('*')
     )
+  },
+  update(id, myballot){
+    return knex('myballot').where('id',id).update(myballot).returning('*')
+  },
+  delete(id){
+    return knex('users').where('id',id).del()
   }
-  // update(id, user){
-  //   return database('users').where('id',id).update(user).returning('*')
-  // },
-  // delete(id){
-  //   return database('users').where('id',id).del()
-  // }
 };
