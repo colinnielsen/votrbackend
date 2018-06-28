@@ -8,9 +8,10 @@ router.post('/', authUtils.verifyTokenMiddleware, (req, res) => {
 });
 
 router.put('/', authUtils.verifyTokenMiddleware, (req, res) => {
-    queries.updateBallot(req.userId, req.params.id).then(updatedBallot => {
+    console.log(req.userId, req.body)
+    queries.updateBallot(req).then(updatedBallot => {
         res.json({ itworked: updatedBallot });
-    })
+    });
 });
 
 module.exports = router;

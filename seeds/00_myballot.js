@@ -19,5 +19,7 @@ exports.seed = function (knex, Promise) {
           d7: 1
         },
       ]);
+    }).then(() => {
+      return knex.raw("ALTER SEQUENCE myballot_id_seq RESTART WITH 2;");
     });
 };

@@ -20,16 +20,16 @@ module.exports = {
   create(body) {
     return (
       knex('myballot').insert({
-        gov: null,
-        ag: null,
-        sos: null,
-        d1: null,
-        d2: null,
-        d3: null,
-        d4: null,
-        d5: null,
-        d6: null,
-        d7: null
+        gov: 99,
+        ag: 99,
+        sos: 99,
+        d1: 99,
+        d2: 99,
+        d3: 99,
+        d4: 99,
+        d5: 99,
+        d6: 99,
+        d7: 99
       })
         .returning('id')
         .then(id => {
@@ -43,8 +43,8 @@ module.exports = {
     )
   },
 
-  updateBallot(id, myballot) {
-    return knex('myballot').where('id', id).update(myballot).returning('*')
+  updateBallot(req) {
+    return knex('myballot').where('id', req.userId).update(req.body).returning('*')
   },
 
   delete(id) {

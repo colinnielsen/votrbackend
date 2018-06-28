@@ -13,5 +13,7 @@ exports.seed = function (knex, Promise) {
           ballotId: 1
         },
       ]);
+    }).then(() => {
+      return knex.raw("ALTER SEQUENCE user_id_seq RESTART WITH 2;");
     });
 };
