@@ -3,7 +3,7 @@ Server side for "voter" app made by @djmeans, @s-romberg, @taylor4980, and I. Us
 ## 
 ### Tech Used
 * knexjs
-..* postgresql
+⋅⋅* postgresql
 * expressjs
 * JWT
 * bCrypt
