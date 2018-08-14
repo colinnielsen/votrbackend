@@ -7,3 +7,4 @@ Server side for "voter" app made by @djmeans, @s-romberg, @taylor4980, and I. Us
 * expressjs
 * JWT
 * bCrypt
+
